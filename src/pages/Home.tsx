@@ -54,7 +54,7 @@ const Home = () => {
                 </div>
                 <div className="h-12 w-px bg-border" />
                 <div>
-                  <p className="text-3xl font-bebas text-primary">100+</p>
+                  <p className="text-3xl font-bebas text-primary">10</p>
                   <p className="text-sm text-muted-foreground">Projects Completed</p>
                 </div>
               </div>
