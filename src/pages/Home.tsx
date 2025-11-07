@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import profileImage from "@/assets/profile-sumit.jpg";
+import profileImage from "@/assets/profile-sumit.png";
 
 const Home = () => {
   return (
