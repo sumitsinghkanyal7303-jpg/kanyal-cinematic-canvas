@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Play, Video, Palette, Sparkles, CheckCircle, Award, Users } from "lucide-react";
 import profileImage from "@/assets/profile-sumit.png";
 
 const Home = () => {
@@ -81,6 +82,127 @@ const Home = () => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-accent rounded-full flex items-start justify-center p-2">
             <div className="w-1 h-3 bg-accent rounded-full" />
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <p className="text-accent text-sm font-inter font-medium uppercase tracking-wider mb-2">
+              What I Do
+            </p>
+            <h2 className="text-5xl md:text-6xl font-bebas text-primary mb-4">SERVICES</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Specialized in creating captivating visual content that tells your story
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Video,
+                title: "Video Editing",
+                description: "Professional video editing with smooth transitions, color grading, and compelling storytelling"
+              },
+              {
+                icon: Palette,
+                title: "Graphic Design",
+                description: "Eye-catching designs for social media, branding, and marketing materials"
+              },
+              {
+                icon: Sparkles,
+                title: "Motion Graphics",
+                description: "Dynamic animations and motion graphics that bring ideas to life"
+              }
+            ].map((service, index) => (
+              <Card key={index} className="border-border hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 animate-fade-in group">
+                <CardHeader>
+                  <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                    <service.icon className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="font-bebas text-2xl text-primary">{service.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/services">
+              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                View All Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Me Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <p className="text-accent text-sm font-inter font-medium uppercase tracking-wider mb-2">
+              Why Work With Me
+            </p>
+            <h2 className="text-5xl md:text-6xl font-bebas text-primary mb-4">MY APPROACH</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                icon: CheckCircle,
+                title: "Quality Focused",
+                description: "Delivering high-quality work that exceeds expectations"
+              },
+              {
+                icon: Users,
+                title: "Client Collaboration",
+                description: "Working closely with clients to bring their vision to life"
+              },
+              {
+                icon: Award,
+                title: "Creative Solutions",
+                description: "Innovative approaches to solve visual storytelling challenges"
+              }
+            ].map((point, index) => (
+              <div key={index} className="text-center animate-fade-in">
+                <div className="h-16 w-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <point.icon className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bebas text-primary mb-2">{point.title}</h3>
+                <p className="text-muted-foreground">{point.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <h2 className="text-5xl md:text-6xl font-bebas text-primary mb-6">
+              LET'S CREATE SOMETHING AMAZING
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Ready to bring your vision to life? Let's discuss your project and create visual content that stands out.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link to="/contact">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-inter">
+                  Start a Project
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/portfolio">
+                <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-inter">
+                  View My Work
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
