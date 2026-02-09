@@ -1,5 +1,10 @@
 import { Film, Palette, Monitor, Box, Layers } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 const Portfolio = () => {
+  const navigate = useNavigate();
+
+  const slugs = ["video-editing", "motion-graphics", "graphics-branding", "ui-ux", "3d-ads"];
   const categories = [{
     icon: Film,
     title: "Video Editing",
@@ -40,7 +45,7 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {categories.map((category, index) => {
           const Icon = category.icon;
-          return <button key={index} className="bg-card border-2 border-border p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 group cursor-pointer animate-fade-in text-left rounded-lg" style={{
+          return <button key={index} onClick={() => navigate(`/portfolio/${slugs[index]}`)} className="bg-card border-2 border-border p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 group cursor-pointer animate-fade-in text-left rounded-lg" style={{
             animationDelay: `${index * 0.1}s`
           }}>
                 <div className="mb-6">
