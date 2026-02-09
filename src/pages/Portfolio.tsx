@@ -50,9 +50,9 @@ const Portfolio = () => {
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <div
+              <button
                 key={index}
-                className="bg-card border-2 border-border rounded-lg p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 group cursor-pointer animate-fade-in"
+                className="bg-card border-2 border-border rounded-lg p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 group cursor-pointer animate-fade-in text-left"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="mb-6">
@@ -64,7 +64,7 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-bebas text-primary mb-2">{category.title}</h3>
                 <p className="text-sm text-accent font-medium mb-3">{category.count}</p>
                 <p className="text-muted-foreground text-sm">{category.description}</p>
-              </div>
+              </button>
             );
           })}
         </div>
