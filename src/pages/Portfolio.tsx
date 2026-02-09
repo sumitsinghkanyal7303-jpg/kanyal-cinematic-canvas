@@ -40,7 +40,7 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {categories.map((category, index) => {
           const Icon = category.icon;
-          return <button key={index} className="bg-card border-2 border-border p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 group cursor-pointer animate-fade-in text-left rounded-md" style={{
+          return <button key={index} className="bg-card border-2 border-border p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 group cursor-pointer animate-fade-in text-left rounded-lg" style={{
             animationDelay: `${index * 0.1}s`
           }}>
                 <div className="mb-6">
